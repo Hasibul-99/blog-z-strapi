@@ -362,6 +362,46 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiPostPost extends Schema.CollectionType {
+  collectionName: 'posts';
+  info: {
+    singularName: 'post';
+    pluralName: 'posts';
+    displayName: 'post';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title_en: Attribute.String & Attribute.Required & Attribute.Unique;
+    title_bn: Attribute.String & Attribute.Required & Attribute.Unique;
+    rating: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<{
+        min: 0;
+        max: 5;
+      }> &
+      Attribute.DefaultTo<4>;
+    breadcrumb_en: Attribute.JSON & Attribute.Required;
+    status: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
+    top_post: Attribute.Boolean & Attribute.DefaultTo<false>;
+    recent_post: Attribute.Boolean & Attribute.DefaultTo<false>;
+    breadcrumb_bn: Attribute.JSON;
+    content_first_en: Attribute.RichText & Attribute.Required;
+    content_first_bn: Attribute.RichText;
+    content_sec_en: Attribute.RichText;
+    content_sec_bn: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -778,6 +818,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::post.post': ApiPostPost;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;

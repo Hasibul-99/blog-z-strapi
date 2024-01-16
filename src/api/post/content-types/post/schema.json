@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "post",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title_en": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "title_bn": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "rating": {
+      "type": "integer",
+      "required": true,
+      "max": 5,
+      "min": 0,
+      "default": 4
+    },
+    "breadcrumb_en": {
+      "type": "json",
+      "required": true
+    },
+    "status": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "top_post": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "recent_post": {
+      "type": "boolean",
+      "default": false
+    },
+    "breadcrumb_bn": {
+      "type": "json"
+    },
+    "content_first_en": {
+      "type": "richtext",
+      "required": true
+    },
+    "content_first_bn": {
+      "type": "richtext"
+    },
+    "content_sec_en": {
+      "type": "richtext"
+    },
+    "content_sec_bn": {
+      "type": "richtext"
+    }
+  }
+}
