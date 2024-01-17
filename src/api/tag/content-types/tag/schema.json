@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "singularName": "tag",
+    "pluralName": "tags",
+    "displayName": "Tag"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title_en": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "title_bn": {
+      "type": "string"
+    },
+    "status": {
+      "type": "boolean"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::post.post",
+      "mappedBy": "tags"
+    }
+  }
+}
