@@ -774,6 +774,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     singularName: 'category';
     pluralName: 'categories';
     displayName: 'Category';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -791,6 +792,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'oneToMany',
       'api::post.post'
     >;
+    slug: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -835,16 +837,22 @@ export interface ApiPostPost extends Schema.CollectionType {
     top_post: Attribute.Boolean & Attribute.DefaultTo<false>;
     recent_post: Attribute.Boolean & Attribute.DefaultTo<false>;
     breadcrumb_bn: Attribute.JSON;
-    content_first_en: Attribute.RichText & Attribute.Required;
-    content_first_bn: Attribute.RichText;
-    content_sec_en: Attribute.RichText;
-    content_sec_bn: Attribute.RichText;
     category: Attribute.Relation<
       'api::post.post',
       'manyToOne',
       'api::category.category'
     >;
     tags: Attribute.Relation<'api::post.post', 'manyToMany', 'api::tag.tag'>;
+    content_first_en: Attribute.Blocks & Attribute.Required;
+    content_first_bn: Attribute.Blocks;
+    content_sec_en: Attribute.Blocks;
+    content_sec_bn: Attribute.Blocks;
+    slug: Attribute.String & Attribute.Required;
+    PublishedDate: Attribute.DateTime;
+    description: Attribute.String;
+    keywords: Attribute.String;
+    image: Attribute.Media;
+    cover_image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -50,19 +50,6 @@
     "breadcrumb_bn": {
       "type": "json"
     },
-    "content_first_en": {
-      "type": "richtext",
-      "required": true
-    },
-    "content_first_bn": {
-      "type": "richtext"
-    },
-    "content_sec_en": {
-      "type": "richtext"
-    },
-    "content_sec_bn": {
-      "type": "richtext"
-    },
     "category": {
       "type": "relation",
       "relation": "manyToOne",
@@ -74,6 +61,48 @@
       "relation": "manyToMany",
       "target": "api::tag.tag",
       "inversedBy": "posts"
+    },
+    "content_first_en": {
+      "type": "blocks",
+      "required": true
+    },
+    "content_first_bn": {
+      "type": "blocks"
+    },
+    "content_sec_en": {
+      "type": "blocks"
+    },
+    "content_sec_bn": {
+      "type": "blocks"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "PublishedDate": {
+      "type": "datetime"
+    },
+    "description": {
+      "type": "string"
+    },
+    "keywords": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "cover_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
