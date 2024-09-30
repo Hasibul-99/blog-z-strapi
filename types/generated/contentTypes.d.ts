@@ -793,6 +793,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'api::post.post'
     >;
     slug: Attribute.String;
+    is_hot: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

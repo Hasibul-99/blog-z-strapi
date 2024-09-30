@@ -57,6 +57,10 @@
     "slug": {
       "type": "string",
       "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "is_hot": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
