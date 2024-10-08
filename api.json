@@ -1,0 +1,191 @@
+{
+    topPost:posts(sort: "createdAt:desc", pagination: { limit: 3 }, filters: {top_post: {eq: true}}) {
+        data {
+            attributes {
+                slug
+                title_en
+                title_bn
+                category{
+                    data {
+                        attributes {
+                            title_en
+                            title_bn
+                            slug
+                        }
+                    }
+                }
+                image{
+                    data{
+                        attributes {
+                            url
+                        }
+                    }
+                }
+                cover_image{
+                    data{
+                        attributes {
+                            url
+                        }
+                    }
+                }
+                createdBy {
+                    firstname
+                    lastname
+                }
+                publishedAt
+                description 
+            }
+        }
+    }
+    justInRecent:posts(sort: "createdAt:desc", pagination: { limit: 4 }) {
+        data{
+            attributes {
+                slug
+                title_en
+                title_bn
+                category{
+                    data {
+                        attributes {
+                            title_en
+                            title_bn
+                            slug
+                        }
+                    }
+                }
+                publishedAt
+            }
+        }
+    }
+    hotCategories:categories(sort: "createdAt:desc", pagination: { limit: 8 }) {
+        data {
+            attributes {
+                title_en
+                title_bn
+                slug
+                posts(sort: "createdAt:desc", pagination: { limit: 5 }) {
+                    data {
+                        attributes {
+                            slug
+                            title_en
+                            title_bn
+                            image{
+                                data{
+                                    attributes {
+                                        url
+                                    }
+                                }
+                            }
+                            cover_image{
+                                data{
+                                    attributes {
+                                        url
+                                    }
+                                }
+                            }
+                            createdBy {
+                                firstname
+                                lastname
+                            }
+                            publishedAt
+                            description 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+=============================================
+
+{
+    categories(filters: {status: {eq: true}}){
+        data {
+            attributes {
+                slug
+            }
+        }
+    }
+}
+
+=============================================
+{
+    hotCategories:categories(filters: {is_hot: {eq: true}}, pagination: { limit: 8 } ) {
+        data{
+            attributes {
+                title_en
+                title_bn
+                slug
+                cover_image {
+                    data {
+                        attributes {
+                            url
+                        }
+                    }
+                }
+                image {
+                    data {
+                        attributes {
+                            url
+                        }
+                    }
+                }
+            }
+        }
+    }
+    justInRecent:posts(sort: "createdAt:desc", pagination: { limit: 4 }) {
+        data{
+            attributes {
+                slug
+                title_en
+                title_bn
+                category{
+                    data {
+                        attributes {
+                            title_en
+                            title_bn
+                            slug
+                        }
+                    }
+                }
+                publishedAt
+            }
+        }
+    }
+    categoryPost:categories(filters: {slug: {eq: "sports"}}) {
+        data {
+            attributes {
+                breadcrumb_en
+                breadcrumb_bn
+                posts(filters: {status: {eq: true}}, sort: "createdAt:desc", pagination: { page: 1, pageSize: 5 }) {
+                    data {
+                        attributes {
+                            title_en
+                            title_bn
+                            image{
+                                data{
+                                    attributes {
+                                        url
+                                    }
+                                }
+                            }
+                            cover_image{
+                                data{
+                                    attributes {
+                                        url
+                                    }
+                                }
+                            }
+                            createdBy {
+                                firstname
+                                lastname
+                            }
+                            publishedAt
+                            description 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
