@@ -4,7 +4,7 @@
   "info": {
     "singularName": "post",
     "pluralName": "posts",
-    "displayName": "post",
+    "displayName": "Post",
     "description": ""
   },
   "options": {
@@ -80,9 +80,6 @@
       "required": true,
       "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
     },
-    "PublishedDate": {
-      "type": "datetime"
-    },
     "description": {
       "type": "string"
     },
@@ -98,11 +95,12 @@
       ]
     },
     "cover_image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     }
   }
 }
