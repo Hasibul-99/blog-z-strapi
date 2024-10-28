@@ -792,7 +792,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'oneToMany',
       'api::post.post'
     >;
-    slug: Attribute.String;
+    slug: Attribute.String & Attribute.Unique;
     is_hot: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
