@@ -61,6 +61,12 @@
     },
     "is_hot": {
       "type": "boolean"
+    },
+    "description": {
+      "type": "string"
+    },
+    "keywords": {
+      "type": "string"
     }
   }
 }

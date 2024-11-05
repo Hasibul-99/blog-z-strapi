@@ -794,6 +794,8 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     >;
     slug: Attribute.String & Attribute.Unique;
     is_hot: Attribute.Boolean;
+    description: Attribute.String;
+    keywords: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
