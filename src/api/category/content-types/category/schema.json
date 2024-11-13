@@ -57,16 +57,24 @@
     "slug": {
       "type": "string",
       "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
-      "unique": true
+      "unique": true,
+      "required": true
     },
     "is_hot": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "description": {
       "type": "string"
     },
     "keywords": {
       "type": "string"
+    },
+    "rating": {
+      "max": 10,
+      "min": 0,
+      "default": 1,
+      "type": "integer"
     }
   }
 }

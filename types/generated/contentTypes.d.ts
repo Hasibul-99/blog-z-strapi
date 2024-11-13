@@ -792,10 +792,16 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'oneToMany',
       'api::post.post'
     >;
-    slug: Attribute.String & Attribute.Unique;
-    is_hot: Attribute.Boolean;
+    slug: Attribute.String & Attribute.Required & Attribute.Unique;
+    is_hot: Attribute.Boolean & Attribute.DefaultTo<false>;
     description: Attribute.String;
     keywords: Attribute.String;
+    rating: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 0;
+        max: 10;
+      }> &
+      Attribute.DefaultTo<1>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -918,7 +924,7 @@ export interface ApiSubscriberSubscriber extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Name: Attribute.String & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
     email: Attribute.Email & Attribute.Required & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
