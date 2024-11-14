@@ -802,6 +802,16 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
         max: 10;
       }> &
       Attribute.DefaultTo<1>;
+    categories: Attribute.Relation<
+      'api::category.category',
+      'oneToMany',
+      'api::category.category'
+    >;
+    category: Attribute.Relation<
+      'api::category.category',
+      'manyToOne',
+      'api::category.category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
