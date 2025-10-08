@@ -10,45 +10,71 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
-    "title_en": {
+    "title": {
       "type": "string",
       "required": true,
-      "unique": true
-    },
-    "title_bn": {
-      "type": "string",
-      "required": true,
-      "unique": true
+      "unique": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "rating": {
       "type": "integer",
       "required": true,
       "max": 5,
       "min": 0,
-      "default": 4
+      "default": 4,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
-    "breadcrumb_en": {
+    "breadcrumb": {
       "type": "json",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "status": {
       "type": "boolean",
       "default": true,
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "top_post": {
       "type": "boolean",
       "default": false,
-      "required": false
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "recent_post": {
       "type": "boolean",
-      "default": false
-    },
-    "breadcrumb_bn": {
-      "type": "json"
+      "default": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "category": {
       "type": "relation",
@@ -62,29 +88,48 @@
       "target": "api::tag.tag",
       "inversedBy": "posts"
     },
-    "content_first_en": {
+    "content_first": {
       "type": "blocks",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
-    "content_first_bn": {
-      "type": "blocks"
-    },
-    "content_sec_en": {
-      "type": "blocks"
-    },
-    "content_sec_bn": {
-      "type": "blocks"
+    "content_sec": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "slug": {
       "type": "string",
       "required": true,
-      "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "keywords": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "image": {
       "type": "media",
@@ -92,7 +137,12 @@
       "required": false,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "cover_image": {
       "type": "media",
@@ -100,7 +150,12 @@
       "required": false,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

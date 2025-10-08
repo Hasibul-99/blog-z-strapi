@@ -780,12 +780,10 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    title_en: Attribute.String & Attribute.Required & Attribute.Unique;
-    title_bn: Attribute.String;
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
     cover_image: Attribute.Media;
     image: Attribute.Media;
-    breadcrumb_en: Attribute.JSON & Attribute.Required;
-    breadcrumb_bn: Attribute.JSON;
+    breadcrumb: Attribute.JSON & Attribute.Required;
     status: Attribute.Boolean & Attribute.DefaultTo<true>;
     posts: Attribute.Relation<
       'api::category.category',
@@ -883,8 +881,7 @@ export interface ApiPostPost extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    title_en: Attribute.String & Attribute.Required & Attribute.Unique;
-    title_bn: Attribute.String & Attribute.Required & Attribute.Unique;
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
     rating: Attribute.Integer &
       Attribute.Required &
       Attribute.SetMinMax<{
@@ -892,21 +889,18 @@ export interface ApiPostPost extends Schema.CollectionType {
         max: 5;
       }> &
       Attribute.DefaultTo<4>;
-    breadcrumb_en: Attribute.JSON & Attribute.Required;
+    breadcrumb: Attribute.JSON & Attribute.Required;
     status: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
     top_post: Attribute.Boolean & Attribute.DefaultTo<false>;
     recent_post: Attribute.Boolean & Attribute.DefaultTo<false>;
-    breadcrumb_bn: Attribute.JSON;
     category: Attribute.Relation<
       'api::post.post',
       'manyToOne',
       'api::category.category'
     >;
     tags: Attribute.Relation<'api::post.post', 'manyToMany', 'api::tag.tag'>;
-    content_first_en: Attribute.Blocks & Attribute.Required;
-    content_first_bn: Attribute.Blocks;
-    content_sec_en: Attribute.Blocks;
-    content_sec_bn: Attribute.Blocks;
+    content_first: Attribute.Blocks & Attribute.Required;
+    content_sec: Attribute.Blocks;
     slug: Attribute.String & Attribute.Required;
     description: Attribute.String;
     keywords: Attribute.String;
@@ -960,13 +954,13 @@ export interface ApiTagTag extends Schema.CollectionType {
     singularName: 'tag';
     pluralName: 'tags';
     displayName: 'Tag';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    title_en: Attribute.String & Attribute.Required & Attribute.Unique;
-    title_bn: Attribute.String;
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
     status: Attribute.Boolean;
     posts: Attribute.Relation<'api::tag.tag', 'manyToMany', 'api::post.post'>;
     createdAt: Attribute.DateTime;
