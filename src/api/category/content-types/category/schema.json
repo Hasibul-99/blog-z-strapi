@@ -18,57 +18,57 @@
   "attributes": {
     "title": {
       "type": "string",
-      "required": true,
-      "unique": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true,
+      "unique": true
     },
     "cover_image": {
       "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ],
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "image": {
       "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "multiple": true,
       "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      ]
     },
     "breadcrumb": {
       "type": "json",
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
-    "status": {
+    "is_active": {
       "type": "boolean",
-      "default": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "default": true
     },
     "posts": {
       "type": "relation",
@@ -78,23 +78,23 @@
     },
     "slug": {
       "type": "string",
-      "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
-      "unique": true,
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true,
+      "unique": true,
+      "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
     },
     "is_hot": {
       "type": "boolean",
-      "default": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "default": false
     },
     "description": {
       "type": "string",
@@ -113,15 +113,15 @@
       }
     },
     "rating": {
-      "max": 10,
-      "min": 0,
-      "default": 1,
       "type": "integer",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "default": 1,
+      "min": 0,
+      "max": 10
     },
     "categories": {
       "type": "relation",

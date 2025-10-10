@@ -18,63 +18,63 @@
   "attributes": {
     "title": {
       "type": "string",
-      "required": true,
-      "unique": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true,
+      "unique": true
     },
     "rating": {
       "type": "integer",
-      "required": true,
-      "max": 5,
-      "min": 0,
-      "default": 4,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true,
+      "default": 4,
+      "min": 0,
+      "max": 5
     },
     "breadcrumb": {
       "type": "json",
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
-    "status": {
+    "is_active": {
       "type": "boolean",
-      "default": true,
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true,
+      "default": true
     },
     "top_post": {
       "type": "boolean",
-      "default": false,
-      "required": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": false,
+      "default": false
     },
     "recent_post": {
       "type": "boolean",
-      "default": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "default": false
     },
     "category": {
       "type": "relation",
@@ -90,12 +90,12 @@
     },
     "content_first": {
       "type": "blocks",
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "content_sec": {
       "type": "blocks",
@@ -107,13 +107,13 @@
     },
     "slug": {
       "type": "string",
-      "required": true,
-      "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true,
+      "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
     },
     "description": {
       "type": "string",
@@ -133,29 +133,29 @@
     },
     "image": {
       "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ],
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "cover_image": {
       "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ],
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
