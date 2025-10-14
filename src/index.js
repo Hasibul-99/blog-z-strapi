@@ -56,5 +56,40 @@ module.exports = {
    * This gives you an opportunity to set up your data model,
    * run jobs, or perform some special logic.
    */
-  bootstrap(/*{ strapi }*/) {},
+  async bootstrap({ strapi }) {
+    // Set up public permissions for GraphQL access
+    const publicRole = await strapi
+      .query('plugin::users-permissions.role')
+      .findOne({ where: { type: 'public' } });
+
+    if (publicRole) {
+      const contentTypes = ['api::post.post', 'api::category.category', 'api::tag.tag'];
+      const actions = ['find', 'findOne'];
+
+      for (const contentType of contentTypes) {
+        for (const action of actions) {
+          const existingPermission = await strapi
+            .query('plugin::users-permissions.permission')
+            .findOne({
+              where: {
+                action: `${contentType}.${action}`,
+                role: publicRole.id,
+              },
+            });
+
+          if (!existingPermission) {
+            await strapi.query('plugin::users-permissions.permission').create({
+              data: {
+                action: `${contentType}.${action}`,
+                role: publicRole.id,
+              },
+            });
+            console.log(`✅ Created public permission for ${contentType}.${action}`);
+          } else {
+            console.log(`ℹ️  Public permission already exists for ${contentType}.${action}`);
+          }
+        }
+      }
+    }
+  },
 };
