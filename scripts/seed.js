@@ -63,6 +63,36 @@ const categories = [
     is_active: true,
     is_hot: true,
     rating: 9
+  },
+  {
+    title: 'Business',
+    slug: 'business',
+    description: 'Business news, market analysis, and financial updates',
+    keywords: 'business, finance, market, economy, stocks',
+    breadcrumb: [{ name: 'Home', url: '/' }, { name: 'Business', url: '/business' }],
+    is_active: true,
+    is_hot: true,
+    rating: 8
+  },
+  {
+    title: 'Science',
+    slug: 'science',
+    description: 'Scientific discoveries and research breakthroughs',
+    keywords: 'science, research, discovery, innovation, technology',
+    breadcrumb: [{ name: 'Home', url: '/' }, { name: 'Science', url: '/science' }],
+    is_active: true,
+    is_hot: true,
+    rating: 9
+  },
+  {
+    title: 'Travel',
+    slug: 'travel',
+    description: 'Travel guides, destinations, and adventure stories',
+    keywords: 'travel, tourism, destinations, adventure, culture',
+    breadcrumb: [{ name: 'Home', url: '/' }, { name: 'Travel', url: '/travel' }],
+    is_active: true,
+    is_hot: false,
+    rating: 7
   }
 ];
 
@@ -249,6 +279,300 @@ const posts = [
           {
             type: 'text',
             text: 'The gaming industry continues to break new ground with innovative technologies and engaging content. From virtual reality experiences to mobile gaming revolution, 2024 marks a pivotal year for interactive entertainment.'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Global Markets Show Strong Recovery Amid Economic Uncertainty',
+    slug: 'global-markets-strong-recovery-economic-uncertainty',
+    description: 'Analysis of global market trends and economic recovery patterns',
+    keywords: 'business, markets, economy, recovery, finance, stocks',
+    breadcrumb: [
+      { name: 'Home', url: '/' },
+      { name: 'Business', url: '/business' },
+      { name: 'Markets', url: '/business/markets' }
+    ],
+    rating: 5,
+    is_active: true,
+    top_post: true,
+    recent_post: true,
+    content_first: [
+      {
+        type: 'paragraph',
+        children: [
+          {
+            type: 'text',
+            text: 'Global financial markets are demonstrating remarkable resilience as they navigate through economic uncertainties. Despite ongoing challenges, major indices have shown consistent growth patterns, indicating strong investor confidence and robust corporate performance.'
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        children: [
+          {
+            type: 'text',
+            text: 'This comprehensive analysis examines the key factors driving market recovery, including technological innovation, sustainable business practices, and strategic government policies that are shaping the future of global commerce.'
+          }
+        ]
+      }
+    ],
+    content_sec: [
+      {
+        type: 'paragraph',
+        children: [
+          {
+            type: 'text',
+            text: 'Investors are increasingly focusing on ESG criteria and digital transformation initiatives, creating new opportunities for sustainable growth and long-term value creation across various sectors.'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Cryptocurrency Adoption Accelerates in Corporate Sector',
+    slug: 'cryptocurrency-adoption-accelerates-corporate-sector',
+    description: 'Major corporations embrace digital currencies for business operations',
+    keywords: 'business, cryptocurrency, digital currency, corporate, adoption',
+    breadcrumb: [
+      { name: 'Home', url: '/' },
+      { name: 'Business', url: '/business' },
+      { name: 'Cryptocurrency', url: '/business/crypto' }
+    ],
+    rating: 4,
+    is_active: true,
+    top_post: false,
+    recent_post: true,
+    content_first: [
+      {
+        type: 'paragraph',
+        children: [
+          {
+            type: 'text',
+            text: 'The corporate world is witnessing unprecedented adoption of cryptocurrency technologies, with major companies integrating digital currencies into their payment systems and treasury management strategies.'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Startup Ecosystem Thrives with Record Venture Capital Investment',
+    slug: 'startup-ecosystem-thrives-record-venture-capital-investment',
+    description: 'Venture capital funding reaches new heights supporting innovative startups',
+    keywords: 'business, startups, venture capital, investment, innovation',
+    breadcrumb: [
+      { name: 'Home', url: '/' },
+      { name: 'Business', url: '/business' },
+      { name: 'Startups', url: '/business/startups' }
+    ],
+    rating: 4,
+    is_active: true,
+    top_post: false,
+    recent_post: true,
+    content_first: [
+      {
+        type: 'paragraph',
+        children: [
+          {
+            type: 'text',
+            text: 'The startup ecosystem is experiencing a golden age with venture capital investments reaching record levels. Innovative companies across various sectors are securing substantial funding to scale their operations and bring groundbreaking solutions to market.'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Quantum Computing Breakthrough Promises Revolutionary Applications',
+    slug: 'quantum-computing-breakthrough-revolutionary-applications',
+    description: 'Latest quantum computing advances open new possibilities for scientific research',
+    keywords: 'science, quantum computing, technology, research, breakthrough',
+    breadcrumb: [
+      { name: 'Home', url: '/' },
+      { name: 'Science', url: '/science' },
+      { name: 'Quantum Computing', url: '/science/quantum' }
+    ],
+    rating: 5,
+    is_active: true,
+    top_post: true,
+    recent_post: true,
+    content_first: [
+      {
+        type: 'paragraph',
+        children: [
+          {
+            type: 'text',
+            text: 'Scientists have achieved a major breakthrough in quantum computing that could revolutionize fields ranging from drug discovery to cryptography. This advancement represents a significant leap forward in our ability to solve complex computational problems.'
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        children: [
+          {
+            type: 'text',
+            text: 'The implications of this quantum computing milestone extend far beyond theoretical physics, promising practical applications in artificial intelligence, financial modeling, and climate simulation that could transform how we approach some of humanitys greatest challenges.'
+          }
+        ]
+      }
+    ],
+    content_sec: [
+      {
+        type: 'paragraph',
+        children: [
+          {
+            type: 'text',
+            text: 'Research teams worldwide are now collaborating to explore the full potential of these quantum systems, with early applications already showing promising results in optimization problems and machine learning algorithms.'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Climate Change Research Reveals Urgent Need for Action',
+    slug: 'climate-change-research-reveals-urgent-need-action',
+    description: 'New climate studies highlight critical environmental challenges and solutions',
+    keywords: 'science, climate change, environment, research, sustainability',
+    breadcrumb: [
+      { name: 'Home', url: '/' },
+      { name: 'Science', url: '/science' },
+      { name: 'Climate', url: '/science/climate' }
+    ],
+    rating: 5,
+    is_active: true,
+    top_post: false,
+    recent_post: true,
+    content_first: [
+      {
+        type: 'paragraph',
+        children: [
+          {
+            type: 'text',
+            text: 'Comprehensive climate research has unveiled critical insights into the accelerating pace of environmental changes, emphasizing the urgent need for coordinated global action to address climate challenges and implement sustainable solutions.'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Space Exploration Enters New Era with Private Sector Innovation',
+    slug: 'space-exploration-new-era-private-sector-innovation',
+    description: 'Private companies drive innovation in space technology and exploration',
+    keywords: 'science, space exploration, technology, innovation, private sector',
+    breadcrumb: [
+      { name: 'Home', url: '/' },
+      { name: 'Science', url: '/science' },
+      { name: 'Space', url: '/science/space' }
+    ],
+    rating: 4,
+    is_active: true,
+    top_post: true,
+    recent_post: true,
+    content_first: [
+      {
+        type: 'paragraph',
+        children: [
+          {
+            type: 'text',
+            text: 'The space industry is experiencing unprecedented growth as private companies revolutionize space technology and exploration. From reusable rockets to commercial space stations, innovation is driving down costs and opening new frontiers for scientific discovery.'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Hidden Gems: Discovering Europes Best Kept Travel Secrets',
+    slug: 'hidden-gems-discovering-europes-best-kept-travel-secrets',
+    description: 'Explore lesser-known European destinations that offer authentic experiences',
+    keywords: 'travel, europe, destinations, hidden gems, tourism, culture',
+    breadcrumb: [
+      { name: 'Home', url: '/' },
+      { name: 'Travel', url: '/travel' },
+      { name: 'Europe', url: '/travel/europe' }
+    ],
+    rating: 5,
+    is_active: true,
+    top_post: true,
+    recent_post: true,
+    content_first: [
+      {
+        type: 'paragraph',
+        children: [
+          {
+            type: 'text',
+            text: 'Beyond the well-trodden tourist paths lie Europes most enchanting hidden gems, waiting to be discovered by adventurous travelers. These lesser-known destinations offer authentic cultural experiences, stunning landscapes, and rich histories without the crowds.'
+          }
+        ]
+      },
+      {
+        type: 'paragraph',
+        children: [
+          {
+            type: 'text',
+            text: 'From medieval villages nestled in rolling hills to pristine coastal towns with crystal-clear waters, these secret European destinations provide the perfect escape for travelers seeking unique and memorable experiences.'
+          }
+        ]
+      }
+    ],
+    content_sec: [
+      {
+        type: 'paragraph',
+        children: [
+          {
+            type: 'text',
+            text: 'Local cuisine, traditional crafts, and warm hospitality await visitors who venture off the beaten path, creating lasting memories and authentic connections with European culture and heritage.'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Sustainable Tourism: How to Travel Responsibly in 2024',
+    slug: 'sustainable-tourism-how-travel-responsibly-2024',
+    description: 'Guide to eco-friendly travel practices and sustainable tourism options',
+    keywords: 'travel, sustainable tourism, eco-friendly, responsible travel, environment',
+    breadcrumb: [
+      { name: 'Home', url: '/' },
+      { name: 'Travel', url: '/travel' },
+      { name: 'Sustainable', url: '/travel/sustainable' }
+    ],
+    rating: 4,
+    is_active: true,
+    top_post: false,
+    recent_post: true,
+    content_first: [
+      {
+        type: 'paragraph',
+        children: [
+          {
+            type: 'text',
+            text: 'As environmental consciousness grows, travelers are increasingly seeking ways to explore the world while minimizing their ecological footprint. Sustainable tourism practices are becoming essential for preserving destinations for future generations.'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Adventure Travel: Top Extreme Destinations for Thrill Seekers',
+    slug: 'adventure-travel-top-extreme-destinations-thrill-seekers',
+    description: 'Ultimate guide to the worlds most exciting adventure travel destinations',
+    keywords: 'travel, adventure, extreme sports, destinations, thrill seeking',
+    breadcrumb: [
+      { name: 'Home', url: '/' },
+      { name: 'Travel', url: '/travel' },
+      { name: 'Adventure', url: '/travel/adventure' }
+    ],
+    rating: 4,
+    is_active: true,
+    top_post: false,
+    recent_post: true,
+    content_first: [
+      {
+        type: 'paragraph',
+        children: [
+          {
+            type: 'text',
+            text: 'For adrenaline junkies and adventure enthusiasts, the world offers countless opportunities for extreme experiences. From mountain climbing to deep-sea diving, these destinations provide the ultimate thrill for those seeking extraordinary adventures.'
           }
         ]
       }
