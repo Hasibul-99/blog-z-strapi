@@ -90,6 +90,32 @@ module.exports = {
           }
         }
       }
+
+      // Allow Public to create Subscriber entries
+      const createContentTypes = ['api::subscriber.subscriber'];
+      for (const contentType of createContentTypes) {
+        const action = 'create';
+        const existingCreate = await strapi
+          .query('plugin::users-permissions.permission')
+          .findOne({
+            where: {
+              action: `${contentType}.${action}`,
+              role: publicRole.id,
+            },
+          });
+
+        if (!existingCreate) {
+          await strapi.query('plugin::users-permissions.permission').create({
+            data: {
+              action: `${contentType}.${action}`,
+              role: publicRole.id,
+            },
+          });
+          console.log(`✅ Created public permission for ${contentType}.${action}`);
+        } else {
+          console.log(`ℹ️  Public permission already exists for ${contentType}.${action}`);
+        }
+      }
     }
   },
 };
