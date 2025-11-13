@@ -91,8 +91,8 @@ module.exports = {
         }
       }
 
-      // Allow Public to create Subscriber entries
-      const createContentTypes = ['api::subscriber.subscriber'];
+      // Allow Public to create Subscriber and Contact entries
+      const createContentTypes = ['api::subscriber.subscriber', 'api::contact.contact'];
       for (const contentType of createContentTypes) {
         const action = 'create';
         const existingCreate = await strapi
